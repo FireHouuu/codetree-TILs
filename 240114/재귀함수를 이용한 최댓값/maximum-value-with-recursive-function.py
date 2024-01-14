@@ -7,6 +7,6 @@ def f(n):
     return max(f(n-1), _list[n])
 
 if n == 1:
-    print(_list)
+    print(_list[0])
 else:
     print(f(n-1))
