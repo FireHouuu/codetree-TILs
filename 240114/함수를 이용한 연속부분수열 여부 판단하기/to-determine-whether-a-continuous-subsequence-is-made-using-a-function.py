@@ -1,15 +1,18 @@
 n_a, n_b = tuple(map(int, input().split()))
-A = input().replace(" " , "")
-B = input().replace(" " , "")
+A = input().split()
+B = input().split()
 
-def cal(n_a, n_b, A, B):
-    n = n_a - n_b + 1
-    for i in range(n):
-        if A[i:i + n_b] == B:
-            print(A[i:i + n_b])
-            print(B)
-            return True
-    return False
+def cal(len_a, len_b, A, B):
+    i = j = 0
+
+    while i < len_a and j < len_b:
+        if A[i] == B[j]:
+            j += 1
+        i += 1
+
+    return j == len_b
+
+    
 
 if cal(n_a, n_b, A, B):
     print("Yes")
