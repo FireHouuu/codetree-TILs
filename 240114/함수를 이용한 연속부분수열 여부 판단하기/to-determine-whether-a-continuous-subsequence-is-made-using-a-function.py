@@ -4,7 +4,7 @@ B = input().replace(" " , "")
 
 def cal(n_a, n_b, A, B):
     n = n_a - n_b + 1
-    for i in range(n+1):
+    for i in range(n):
         if A[i:i + n_b] == B:
             return True
     return False
