@@ -6,7 +6,7 @@ def gcx(x):
     global n
     cnt = 0
     tmp = []
-    if x <= 1:
+    if x >= 10:
         out = 1
         for k in range(n):
             out *= _list[k]
@@ -20,6 +20,6 @@ def gcx(x):
             _list[j] /= x
         return gcx(x) * x
     else:
-        return gcx(x-1)
+        return gcx(x+1)
 
-print(int(gcx(10)))
+print(int(gcx(2)))
