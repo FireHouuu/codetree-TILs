@@ -6,6 +6,6 @@ class spy:
     
 sc, mp, time = input().split()
 spy1 = spy(sc, mp, time)
-print("secret code : {}", format(spy1.sc))
-print("meeting poing : {}", format(spy1.mp))
-print("time : {}", format(spy1.time))
+print("secret code :", spy1.sc)
+print("meeting point :", spy1.mp)
+print("time :", spy1.time)
