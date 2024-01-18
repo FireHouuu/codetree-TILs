@@ -10,4 +10,4 @@ def day_cal(m, d):
     return mon_to_day + d
 
 idx = day_cal(m2, d2) - day_cal(m1, d1)
-print(yoil[idx])
+print(yoil[idx%7])
