@@ -22,12 +22,12 @@ public class Main {
         int plus = 0;
         for (int i = 0; i < n; i++) {
             if (a[i] < 0) {
-                for (int j = itter + a[i] + 1; j <= itter; j++) 
-                blocks[j]++;
+                for (int j = itter - 1; j >= itter + a[i]; j--)
+                    blocks[j]++;
             }
             else { 
                 for (int j = itter; j < itter + a[i]; j++) 
-                blocks[j]++;
+                    blocks[j]++;
             }
             itter = itter + a[i];
         }
