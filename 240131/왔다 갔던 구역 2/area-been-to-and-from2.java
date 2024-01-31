@@ -10,11 +10,11 @@ public class Main {
         n = sc.nextInt();
         int tmp_int = 0;
         char tmp_char;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             tmp_int = sc.nextInt();
             tmp_char = sc.next().charAt(0);
             if (tmp_char == 'L')
-                tmp_int = 0 - tmp_int;
+                tmp_int = -tmp_int;
             a[i] = tmp_int;
         }
 
@@ -29,6 +29,7 @@ public class Main {
                 for (int j = itter; j < itter + a[i]; j++) 
                 blocks[j]++;
             }
+            itter = itter + a[i];
         }
         range = 0;
         for (int i = 0; i < 2000; i++) 
