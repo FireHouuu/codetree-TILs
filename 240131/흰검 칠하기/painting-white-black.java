@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static final int MAX_n = 1000;
     public static int[] a = new int[MAX_n];
-    public static int[] blocks_w = new int[2000];
-    public static int[] blocks_b = new int[2000];
-    public static int[] blocks_color = new int[2000];
+    public static int[] blocks_w = new int[200000];
+    public static int[] blocks_b = new int[200000];
+    public static int[] blocks_color = new int[200000];
     public static int n, range, white, black, gray;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
