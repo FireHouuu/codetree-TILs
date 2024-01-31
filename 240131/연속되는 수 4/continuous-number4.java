@@ -12,8 +12,8 @@ public class Main {
         for (int i = 0; i < n; i++)
             list[i] = sc.nextInt();
         
-        length = 1;
-        int max_len = 1;
+        length = 0;
+        int max_len = 0;
         for (int i = 0; i < n; i++) {
             if (i == 0 || list[i-1] < list[i]) {
                 length++;
