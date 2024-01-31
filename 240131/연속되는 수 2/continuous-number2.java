@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         cnt = 1;
-        max_re = 0;
+        max_re = 1;
         int cur = -1, past = -1;
         for (int i = 1; i <= n; i++) {
             cur = sc.nextInt();
