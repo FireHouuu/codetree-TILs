@@ -51,7 +51,7 @@ public class Main {
         black = 0;
         white = 0;
 
-        for (int i = 0; i < 2000; i++) {
+        for (int i = 0; i < 200000; i++) {
             if (blocks_color[i] == 1) white++;
             else if (blocks_color[i] == 2) black++;
             else if (blocks_color[i] == 3) gray++;
