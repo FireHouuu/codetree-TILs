@@ -20,7 +20,7 @@ public class Main {
             a[i] = tmp_int;
         }
 
-        int itter = 1000;
+        int itter = 100000;
         for (int i = 0; i < n; i++) {
             if (a[i] < 0) {
                 for (int j = itter; j > itter + a[i]; j--) {
