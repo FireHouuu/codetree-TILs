@@ -12,9 +12,11 @@ public class Main {
         
         int length = 0, max_len = 0;
         for (int i = 0; i < n; i++) {
-            if (i == 0 || list[i-1] > t)
-                if (list[i] > t) length++;
-            if (length > max_len) max_len = length;
+            if (list[i] > t) {
+                length++;
+                if (length > max_len) max_len = length;
+            }
+            else length = 0;
         }
 
         System.out.print(max_len);
