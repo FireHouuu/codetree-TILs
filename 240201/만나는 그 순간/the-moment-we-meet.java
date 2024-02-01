@@ -14,6 +14,11 @@ public class Main {
         mline[0] = 0;
         char direction;
 
+        for (int i = 0; i <= time; i++) {
+            nline[i] = time + 2;
+            mline[i] = time + 3;
+        }
+
         int ntime = 1;
         for (int i = 1; i <= n; i++) {
             direction = sc.next().charAt(0);
@@ -40,10 +45,11 @@ public class Main {
         for (int i = 1; i <= 1000; i++) {
             if (nline[i] == mline[i]) {
                 meet = i;
+                System.out.print(nline[i] + " " + i + " ");
                 break;
             }
         }
-
+        
         System.out.print(meet);
     }
 }
