@@ -14,42 +14,39 @@ public class Main {
         mline[0] = 0;
         char direction;
 
-        for (int i = 0; i <= time; i++) {
-            nline[i] = time + 2;
-            mline[i] = time + 3;
-        }
-
-        int ntime = 1;
+        int ntime = 0; // A의 현재 시간
+        int npos = 0; // A의 현재 위치
         for (int i = 1; i <= n; i++) {
             direction = sc.next().charAt(0);
             tmp = sc.nextInt();
-            int plus = 1;
-            if (direction == 'L') plus = -plus;
-            for (int j = ntime; j <= ntime + tmp; j++) 
-                nline[j] = nline[j-1] + plus; 
-            ntime = ntime + tmp;
+            int move = (direction == 'L') ? -tmp : tmp;
+            for (int j = 0; j < tmp; j++) {
+                npos += (direction == 'L') ? -1 : 1;
+                nline[ntime++] = npos;
+            }
         }
 
-        int mtime = 1;
+        int mtime = 0; // B의 현재 시간
+        int mpos = 0; // B의 현재 위치
         for (int i = 1; i <= m; i++) {
             direction = sc.next().charAt(0);
             tmp = sc.nextInt();
-            int plus = 1;
-            if (direction == 'L') plus = -plus;
-            for (int j = mtime; j <= mtime + tmp; j++) 
-                mline[j] = mline[j-1] + plus; 
-            mtime = mtime + tmp;
+            int move = (direction == 'L') ? -tmp : tmp;
+            for (int j = 0; j < tmp; j++) {
+                mpos += (direction == 'L') ? -1 : 1;
+                mline[mtime++] = mpos;
+            }
         }
 
+        // 두 사람이 만나는 시간 찾기
         int meet = -1;
-        for (int i = 1; i <= 1000; i++) {
+        for (int i = 0; i < Math.min(ntime, mtime); i++) {
             if (nline[i] == mline[i]) {
-                meet = i;
-                System.out.print(nline[i] + " " + i + " ");
+                meet = i + 1; // 시간은 1부터 시작하므로 1을 더합니다.
                 break;
             }
         }
-        
+
         System.out.print(meet);
     }
 }
