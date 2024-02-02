@@ -37,13 +37,13 @@ public class Main {
         int max_time = 0;
         if (atime >= btime) {
             max_time = atime;
-            for (int i = btime; i <= atime; i++) 
-                bfield[i] = bfield[btime];
+            for (int i = btime; i < atime; i++) 
+                bfield[i] = bfield[btime-1];
         }
         else {
             max_time = btime;
-            for (int i = atime; i <= btime; i++) 
-                afield[i] = afield[atime];
+            for (int i = atime; i < btime; i++) 
+                afield[i] = afield[atime-1];
         }
 
         boolean fold = true;
