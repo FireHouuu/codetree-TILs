@@ -32,10 +32,15 @@ public class Main {
                     dev_point[b] = k;
                     dev_zombie[b] = 1;
                 }
+                else {
+                    dev_point[a]--;
+                    dev_point[b]--;
+                    continue;
+                }
                 dev_point[a]--;
             }
 
-            if (dev_point[b] > 0) {
+            else if (dev_point[b] > 0) {
                 if (dev_zombie[a] == 0) {
                     dev_point[a] = k;
                     dev_zombie[a] = 1;
