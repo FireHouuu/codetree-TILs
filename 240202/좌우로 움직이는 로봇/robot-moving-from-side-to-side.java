@@ -44,7 +44,7 @@ public class Main {
         for (int i = btime; i < max_time; i++) 
             bfield[i] = bfield[btime - 1];
 
-        boolean fold = false;  // 초기값을 false로 설정
+        boolean fold = true;  // 초기값을 false로 설정
         // fold의 초기값을 false로 설정하여
         // 첫 번째 시간 단계에서 로봇이 같은 위치에 있을 때 이를 감지할 수 있게 함
         int count = 0;
