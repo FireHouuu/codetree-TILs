@@ -34,28 +34,27 @@ public class Main {
             }
         }
 
-        int max_time = 0;
-        if (atime >= btime) {
-            max_time = atime;
-            for (int i = btime; i < atime; i++) 
-                bfield[i] = bfield[btime-1];
-        }
-        else {
-            max_time = btime;
-            for (int i = atime; i < btime; i++) 
-                afield[i] = afield[atime-1];
-        }
+        int max_time = Math.max(atime, btime);
 
-        boolean fold = false;
+        // 로봇이 멈춘 위치를 계속 유지하도록 처리
+        // 이 부분에서 수정된 것은 for 루프의 범위입니다.
+        // atime - 1과 btime - 1까지만 유효한 인덱스입니다.
+        for (int i = atime; i < max_time; i++) 
+            afield[i] = afield[atime - 1];
+        for (int i = btime; i < max_time; i++) 
+            bfield[i] = bfield[btime - 1];
+
+        boolean fold = false;  // 초기값을 false로 설정
+        // fold의 초기값을 false로 설정하여
+        // 첫 번째 시간 단계에서 로봇이 같은 위치에 있을 때 이를 감지할 수 있게 함
         int count = 0;
 
         for (int i = 1; i < max_time; i++) {
-            
             if (!fold) {
                 if (afield[i] == bfield[i]) {
                     count++;
                     fold = true;
-                } 
+                }
             } 
             if (afield[i] != bfield[i]) fold = false;
         }
