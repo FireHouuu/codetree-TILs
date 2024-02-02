@@ -27,20 +27,20 @@ public class Main {
             a = timeline1[i]; b = timeline2[i];
             if (a == 0) continue;
             
-            if (dev_point[a] != 0) {
+            if (dev_point[a] > 0) {
                 if (dev_zombie[b] == 0) {
                     dev_point[b] = k;
                     dev_zombie[b] = 1;
-                    dev_point[a]--;
                 }
+                dev_point[a]--;
             }
 
-            if (dev_point[b] != 0) {
+            if (dev_point[b] > 0) {
                 if (dev_zombie[a] == 0) {
                     dev_point[a] = k;
                     dev_zombie[a] = 1;
-                    dev_point[b]--;
                 }
+                dev_point[b]--;
             }
         }
         for (int i = 1; i <= n; i++)
