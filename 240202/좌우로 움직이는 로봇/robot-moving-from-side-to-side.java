@@ -46,10 +46,10 @@ public class Main {
                 afield[i] = afield[atime-1];
         }
 
-        boolean fold = true;
+        boolean fold = false;
         int count = 0;
 
-        for (int i = 1; i <= max_time; i++) {
+        for (int i = 1; i < max_time; i++) {
             
             if (!fold) {
                 if (afield[i] == bfield[i]) {
