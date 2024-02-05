@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static int n,t;
-    public static int[] dy = new int[]{0, -1, 1, 0};
+    public static int[] dy = new int[]{0, 1, -1, 0};
     public static int[] dx = new int[]{-1, 0, 0, 1};
 
     public static boolean inRange(int x, int y, int n) {
