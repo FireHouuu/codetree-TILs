@@ -27,9 +27,8 @@ public class Main {
             }
         }
         start = sc.nextInt();
-        float first = start / n;
+        float first = (float)start / n;
         int second = start % n;
-    
         if (first <= 1) {
             x = 0;
             d = 2;
