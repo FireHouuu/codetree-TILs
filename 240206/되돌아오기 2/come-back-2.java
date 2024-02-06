@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String order = sc.nextLine();
-        d = 0; x = 0; y = 0;; time = 1;
+        d = 0; x = 0; y = 0; count = -1; time = 1;
         for (int i = 0; i < order.length(); i++) {
             char dir = order.charAt(i);
             if (dir == 'R') d = (d + 1) % 4;
