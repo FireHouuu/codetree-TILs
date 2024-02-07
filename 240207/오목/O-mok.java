@@ -59,12 +59,11 @@ public class Main {
                 boolean flag = false;
                 for (int j = 0; j < 15; j++) {
                     int five = 0; 
-                    int color = 0;
+                    int color = plane[i][j];
                     for (int k = 0; k < 5; k++) {
                         if (plane[i+k][j+k] != 0) {
                             five++;
                             if (color != plane[i+k][j+k]) break;
-                            color = plane[i+k][j+k];
                         }
                         else break;
                     }
