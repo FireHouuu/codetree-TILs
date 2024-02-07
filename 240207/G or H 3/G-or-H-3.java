@@ -13,7 +13,7 @@ public class Main {
             else line[location] = 2;
         }
         int max = 0;
-        for (int i = 0; i <= 10001 - k; i++) {
+        for (int i = 0; i <= 10000 - k; i++) {
             int sum = 0;
             for (int j = 0; j <= k; j++) 
                 sum = sum + line[i + j];
