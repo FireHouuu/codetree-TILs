@@ -16,7 +16,7 @@ public class Main {
             for (int j = i+1; j < 5; j++) {
                 for (int k = 0; k < 4; k++) {
                     for (int f = k+1; f < 5; f++) {
-                        if (k == i || f == j) continue;
+                        if (k == i || f == j || k == j || f == i) continue;
                         int first = list[i] + list[j];
                         int second = list[k] + list[f];
                         int third = sum - first - second;
