@@ -20,7 +20,7 @@ public class Main {
                 if (j == i) continue;
                 if ((x1[i] <= x1[j] && x2[i] >= x2[j]) || (x1[i] >= x1[j] && x2[i] <= x2[j])) {
                     fold = true;
-                    System.out.print(x1[i] + " - " + x2[i]);
+                    //System.out.print(x1[i] + " - " + x2[i]);
                     //System.out.println();
                     break;
                 }
