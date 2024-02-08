@@ -23,6 +23,7 @@ public class Main {
                         int third = sum - first - second;
                         
                         if (first != second && second != third && first != third) {
+                            flag = true;
                             int dif = Math.max(Math.abs(first-second), Math.abs(second-third));
                             dif = Math.max(dif, Math.abs(first-third));
                             min_dif = Math.min(min_dif, dif);
@@ -31,7 +32,7 @@ public class Main {
                 }
             }
         }
-        if (!flag)System.out.print(min_dif);
+        if (flag)System.out.print(min_dif);
         else System.out.print(-1);
 
     }
