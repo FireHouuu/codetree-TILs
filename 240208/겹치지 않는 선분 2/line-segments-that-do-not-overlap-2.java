@@ -17,13 +17,18 @@ public class Main {
         for (int i = 0; i < n - 1; i++) {
             boolean fold = false;
             for (int j = i + 1; j < n; j++) {
-                if (x1[i] >= x1[j] && x2[i] <= x2[j]) {
+                if ((x1[i] < x1[j] && x2[i] > x2[j]) || (x1[i] > x1[j] && x2[i] < x2[j])) {
                     fold = true;
-                    //System.out.print(count);
+                    //System.out.print(x1[i] + " - " + x2[i]);
+                    //System.out.println();
                     break;
                 }
             }
-            if (!fold) count++;
+            if (!fold) {
+                count++;
+                //System.out.print(x1[i] + " - " + x2[i]);
+                //System.out.println();
+            }
         }
         System.out.print(count);
     }
