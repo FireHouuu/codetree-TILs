@@ -20,8 +20,10 @@ public class Main {
             for (int j = 0; j < m; j++) {
                 for (int k = 0; k < m; k++) {
                     if (tmp[k] != 0 && tmp[k] == B[j]) {
-                        tmp[k] = 0;
                         tmp_count++;
+                        //System.out.print(i + " " + tmp[k] + " " + tmp_count + " / ");
+                        tmp[k] = 0;
+                        break;
                     }
                 }
             }
