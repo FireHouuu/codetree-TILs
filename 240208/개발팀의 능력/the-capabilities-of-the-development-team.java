@@ -20,7 +20,7 @@ public class Main {
                         int first = list[i] + list[j];
                         int second = list[k] + list[f];
                         int third = sum - first - second;
-                        if (first != second && second != third && first != second) {
+                        if (first != second && second != third && first != third) {
                             min_dif = Integer.MAX_VALUE;
                             int dif = Math.max(Math.abs(first-second), Math.abs(second-third));
                             dif = Math.max(dif, Math.abs(first-third));
