@@ -13,7 +13,7 @@ public class Main {
         int min_dif = Integer.MAX_VALUE;
 
         for (int i = 0; i < 5; i++) {
-            for (int j = i; j < 6; j++) {
+            for (int j = i+1; j < 6; j++) {
                 for (int k = 0; k < 6; k++) {
                     if (k == i || k == j) continue;
                     for (int f = 0; f < 6; f++) {
