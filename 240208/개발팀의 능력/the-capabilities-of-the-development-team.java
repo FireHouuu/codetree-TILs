@@ -10,7 +10,8 @@ public class Main {
             sum += list[i];
         }
         
-        int min_dif = -1;
+        int min_dif = Integer.MAX_VALUE;
+        boolean flag = false;
 
         for (int i = 0; i < 4; i++) {
             for (int j = i+1; j < 5; j++) {
@@ -20,17 +21,18 @@ public class Main {
                         int first = list[i] + list[j];
                         int second = list[k] + list[f];
                         int third = sum - first - second;
+                        
                         if (first != second && second != third && first != third) {
-                            min_dif = Integer.MAX_VALUE;
                             int dif = Math.max(Math.abs(first-second), Math.abs(second-third));
                             dif = Math.max(dif, Math.abs(first-third));
                             min_dif = Math.min(min_dif, dif);
                         }
                     }
-                    
                 }
             }
         }
-        System.out.print(min_dif);
+        if (!flag)System.out.print(min_dif);
+        else System.out.print(-1);
+
     }
 }
