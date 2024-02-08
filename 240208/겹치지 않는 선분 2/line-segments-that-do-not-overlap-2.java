@@ -16,7 +16,8 @@ public class Main {
         
         for (int i = 0; i < n - 1; i++) {
             boolean fold = false;
-            for (int j = i + 1; j < n; j++) {
+            for (int j = 0; j < n; j++) {
+                if (j == i) continue;
                 if ((x1[i] <= x1[j] && x2[i] >= x2[j]) || (x1[i] >= x1[j] && x2[i] <= x2[j])) {
                     fold = true;
                     //System.out.print(x1[i] + " - " + x2[i]);
