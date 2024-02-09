@@ -12,9 +12,8 @@ public class Main {
             for (int j = 0; j < 3; j++)
                 list[i][j] = sc.nextInt();
         
-        Arrays.sort(list, new Comparator<int[]>() {
+        Arrays.sort(list, new Comparator<int[]>() { //치즈를 먹은 기록을 시간순으로 정렬
             public int compare(int[] o1, int[] o2) {
-                // 내림차순 정렬을 위해 o2와 o1의 순서를 바꿔 비교
                 return Integer.compare(o1[2], o2[2]);
             }
         });
@@ -24,24 +23,29 @@ public class Main {
             for (int j = 0; j < 2; j++)
                 sick[i][j] = sc.nextInt();
         
-        Arrays.sort(sick, new Comparator<int[]>() {
+        Arrays.sort(sick, new Comparator<int[]>() { //아픈 기록을 시간순으로 정렬
             public int compare(int[] o1, int[] o2) {
-                // 내림차순 정렬을 위해 o2와 o1의 순서를 바꿔 비교
                 return Integer.compare(o1[1], o2[1]);
             }
         });
         int max_count = 0;
         for (int i = 0; i < s; i++) {
             int time = sick[i][1];
-            for (int j = 0; j < d; j++) {
-                if (list[j][2] >= time) break;
-                if (list[j][0] != sick[i][0]) continue;
-                int count = 1;
-                for (int k = 0; k < d; k++) {
-                    if (j == k) continue;
-                    if (list[k][1] == list[j][1]) count++;
+            for (int j = 0; j < d; j++) { 
+                if (list[j][2] < time && list[j][0] == sick[i][0]) { //그 시간 이전에 동일한 사람이 먹은 치즈를 확인하기 위함
+                    int[] sick_person = new int[n+1];
+                    int count = 1;
+                    int tmp = list[j][0];
+                    sick_person[tmp] = 1;
+                    for (int k = 0; k < d; k++) {
+                        int tmp2 = list[k][0];
+                        if (list[k][1] == list[j][1] && sick_person[tmp2] == 0){ //같은 치즈를 먹은 사람 & 이미 아픈 사람 list에 포함되어있는지 확인
+                            count++;
+                            sick_person[tmp2] = 1;
+                        }
+                    }
+                    max_count = Math.max(max_count, count);
                 }
-                max_count = Math.max(max_count, count);
             }
         }
         System.out.print(max_count);
