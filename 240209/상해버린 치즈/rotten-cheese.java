@@ -38,7 +38,6 @@ public class Main {
                 if (list[j][0] != sick[i][0]) continue;
                 int count = 1;
                 for (int k = 0; k < d; k++) {
-                    if (list[k][2] >= time) break;
                     if (j == k) continue;
                     if (list[k][1] == list[j][1]) count++;
                 }
