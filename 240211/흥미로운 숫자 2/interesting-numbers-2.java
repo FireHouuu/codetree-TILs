@@ -10,21 +10,17 @@ public class Main {
         for (int i = x; i <= y; i++) {
             for (int j = 0; j < 10; j++) numbers[j] = 0;
             int tmp = i;
-            boolean check = false;
+            int check1 = 0;
+            int check0 = 0;
             while (tmp > 0) {
                 numbers[tmp % 10]++;
                 tmp /= 10;
             }
             for (int j = 0; j < 10; j++) {
-                if (numbers[j] == 1) {
-                    if (check) {
-                        check = false;
-                        break;
-                    }
-                    check = true;
-                }
+                if (numbers[j] == 1) check1++;
+                else if(numbers[j] == 0) check0++;
             }
-            if (check) count++;
+            if (check0 == 8 && check1 == 1) count++;
         }
         System.out.print(count);
     }
