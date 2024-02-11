@@ -12,19 +12,12 @@ public class Main {
         }
         int count = 0;
         for (int i = a; i <= b; i++) {
-            for (int j = 0; j <= b - a; j++) {
-                if(i - j >= a && line[i - j] == 1) {
+            for (int j = 0; j <= 1000; j++) {
+                if((i - j >= 1 && line[i - j] == 1) || (i + j <= 1000 && line[i + j] == 1)) {
                     count++;
                     break;
                 }
-                else if(i + j <= b && line[i + j] == 1) {
-                    count++;
-                    break;
-                }
-                else if(i - j >= a && line[i - j] == 2) {
-                    break;
-                }
-                else if(i + j <= b && line[i + j] == 2) {
+                else if((i - j >= 1 && line[i - j] == 2) || (i + j <= 1000 && line[i + j] == 2)) {
                     break;
                 }
             }
