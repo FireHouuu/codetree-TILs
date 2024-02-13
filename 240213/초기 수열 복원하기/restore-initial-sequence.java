@@ -17,11 +17,8 @@ public class Main {
             int tmp = i;
             for (int j = 0; j < n - 1; j++) {
                 int cur_sum = list[j];
-                //System.out.print(cur_sum + " / " + tmp + " / ");
                 tmp = cur_sum - tmp;
-                //System.out.print(tmp);
-                //System.out.println();
-                if (tmp > 0 && og[tmp] == 0) {
+                if (tmp > 0 && tmp <= n && og[tmp] == 0) {
                     og[tmp] = cnt++;
                     flag = true;
                 }
