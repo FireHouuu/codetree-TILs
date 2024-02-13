@@ -11,6 +11,6 @@ public class Main {
         if ((squre1[2] < squre2[0]) || (squre2[2] < squre1[0]) || (squre1[3] < squre2[1]) || (squre2[3] < squre1[1]))
             overlapping = false;
         if (overlapping) System.out.print("overlapping");
-        else System.out.print("unoverlapping");
+        else System.out.print("nonoverlapping");
     }
 }
