@@ -7,19 +7,13 @@ public class Main {
         n = sc.nextInt(); l = sc.nextInt();
         int[] list = new int[n];
         int max = 0;
-        int min = 100;
         for (int i = 0; i < n; i++) {
             list[i] = sc.nextInt();
             max = Math.max(max, list[i]);
-            min = Math.min(min, list[i]);
         }
         int h_point = 0;
-        for (int i = max; i >= min; i--) {
-            if (i > n) {
-                continue;
-            }
+        for (int i = max; i >= 1; i--) {
             int tmp_L = l;
-            boolean flag = true;
             int tmp_point = 0;
             for (int j = 0; j < n; j++) {
                 if (list[j] >= i - 1) {
