@@ -22,14 +22,9 @@ public class Main {
             boolean flag = true;
             int tmp_point = 0;
             for (int j = 0; j < n; j++) {
-                //System.out.print(list[j] + " " + i);
                 if (list[j] >= i - 1) {
                     if (list[j] < i){
-                        if (tmp_L <= 0) {
-                            flag = false;
-                            break;
-                        }
-                        else {
+                        if (tmp_L > 0) {
                             tmp_L--;
                             tmp_point++;
                         }
@@ -39,10 +34,8 @@ public class Main {
                     }
                 }
             }
-            if (!flag) continue;
             if (tmp_point >= i) {
                 h_point = i;
-                
                 break;
             }
         }
