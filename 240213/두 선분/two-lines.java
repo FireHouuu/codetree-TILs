@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static int a, b, c, d;
     public static boolean is_intersect(int i, int j, int k) {
-        return (i > j || i < k);
+        return (i > j && i < k);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
