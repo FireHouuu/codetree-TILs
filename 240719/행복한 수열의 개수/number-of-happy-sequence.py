@@ -30,5 +30,5 @@ for i in range(n):
             else:
                 y = 1
 
-if m == 1: output = 2
+if n == 1: output = 2
 print(output)
