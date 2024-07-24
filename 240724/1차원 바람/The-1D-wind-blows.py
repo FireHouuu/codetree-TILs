@@ -12,12 +12,12 @@ def check(a, b):
     return False
 
 def push(floor, flag):
-    if flag % 2 == 1:
+    if flag % 2 == 1:  # 좌측으로 이동
         temp = grid[floor][0]
         for i in range(m-1):
             grid[floor][i] = grid[floor][i+1]
         grid[floor][m-1] = temp
-    else:
+    else:  # 우측으로 이동
         temp = grid[floor][m-1]
         for i in range(m-1, 0, -1):
             grid[floor][i] = grid[floor][i-1]
@@ -35,6 +35,7 @@ for _ in range(q):
     up_flag = flag
     down_flag = flag
 
+    # 위쪽으로 전파
     for i in range(floor, 0, -1):
         if check(i, i-1):
             up_flag += 1
@@ -42,6 +43,7 @@ for _ in range(q):
         else:
             break
     
+    # 아래쪽으로 전파
     for i in range(floor, n-1):
         if check(i, i+1):
             down_flag += 1
@@ -49,6 +51,7 @@ for _ in range(q):
         else:
             break
 
+# 그리드 출력
 for i in range(n):
     for j in range(m):
         print(grid[i][j], end=' ')
