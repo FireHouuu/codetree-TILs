@@ -5,7 +5,7 @@ grid = [
     for _ in range(n)
 ]
 
-max_size = 0
+max_size = -1
 
 def check_minus(i, j, k, l):
     for r in range(i, k+1):
