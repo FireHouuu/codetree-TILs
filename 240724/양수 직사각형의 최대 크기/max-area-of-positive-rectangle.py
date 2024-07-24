@@ -17,7 +17,7 @@ def check_minus(i, j, k, l):
 for i in range(n):
     for j in range(m):
         for k in range(i, n):
-            for l in range(k, m):
+            for l in range(j, m):
                 if check_minus(i, j, k, l):
                     size = (k - i + 1) * (l - j + 1)
                     max_size = max(max_size, size)
