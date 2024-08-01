@@ -7,6 +7,10 @@ q, p = map(int, input().split())
 q -= 1
 p -= 1
 
+def init(i, j):
+    if 0 <= i < n and 0 <= j < n:
+        grid[i][j] = 0
+
 def gravity():
     temp = [[0 for _ in range(n)] for _ in range(n)]
     for j in range(n):
@@ -22,10 +26,10 @@ def gravity():
 
 def bomb(i, j, size):
     for k in range(size):
-        grid[i+k][j] = 0
-        grid[i][j+k] = 0
-        grid[i-k][j] = 0
-        grid[i][j-k] = 0
+        init(i+k, j)
+        init(i-k, j)
+        init(i, j+k)
+        init(i, j-k)
 
 bomb(q, p, grid[q][p])
 gravity()
