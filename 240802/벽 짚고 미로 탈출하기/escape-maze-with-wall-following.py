@@ -17,17 +17,19 @@ time = 0
 i = 0
 
 while True:
-
     if not in_range(x+dx[i], y+dy[i]): 
         time += 1
         break
     elif maze[x+dx[i]][y+dy[i]] == '#':
         i = (i + 3) % 4
-    elif maze[x+dx[i]+dx[i+1]][y+dy[i]+dy[i+1]] == '#':
+    elif maze[x+dx[i]+dx[(i+1)%4]][y+dy[i]+dy[(i+1)%4]] == '#':
         x += dx[i]
         y += dy[i]
         time += 1
-    elif maze[x+dx[i]+dx[i+1]][y+dy[i]+dy[i+1]] == '.':
+    elif maze[x+dx[i]+dx[(i+1)%4]][y+dy[i]+dy[(i+1)%4]] == '.':
+        x += dx[i]+dx[(i+1)%4]
+        y += dy[i]+dy[(i+1)%4]
         i = (i + 1) % 4
+        time += 2
 
 print(time)
