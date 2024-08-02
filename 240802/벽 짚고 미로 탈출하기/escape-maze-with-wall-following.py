@@ -2,6 +2,8 @@ n = int(input())
 x, y = map(int, input().split())
 x -= 1
 y -= 1
+og_x = x
+og_y = y
 
 maze = [
     list(input())
@@ -17,6 +19,7 @@ time = 0
 i = 0
 
 while True:
+
     if not in_range(x+dx[i], y+dy[i]): 
         time += 1
         break
@@ -31,5 +34,9 @@ while True:
         y += dy[i]+dy[(i+1)%4]
         i = (i + 1) % 4
         time += 2
+    
+    if x == og_x and y == og_y:
+        time = -1
+        break
 
 print(time)
