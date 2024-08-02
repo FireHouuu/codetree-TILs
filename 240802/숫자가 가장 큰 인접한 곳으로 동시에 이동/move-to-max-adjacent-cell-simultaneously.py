@@ -11,29 +11,32 @@ for _ in range(m):
     sphere[x-1][y-1] = 1
 
 def in_range(x, y):
-    return 0<= x < n and 0 <= y < n
+    return 0 <= x < n and 0 <= y < n
 
-def move(x, y):
-    temp_max = 0
+def move(x, y, new_sphere):
+    temp_max = -1  # 그리드의 값이 음수가 될 수 없다고 가정할 때 -1로 초기화
     dir = 0
     for d in range(4):
-        if in_range(x + dx[d], y + dy[d]) and temp_max < grid[x + dx[d]][y + dy[d]]:
-            temp_max = grid[x + dx[d]][y + dy[d]]
+        nx, ny = x + dx[d], y + dy[d]
+        if in_range(nx, ny) and temp_max < grid[nx][ny]:
+            temp_max = grid[nx][ny]
             dir = d
-    sphere[x][y] = 0
-    sphere[x + dx[dir]][y + dy[dir]] += 1
-
+    nx, ny = x + dx[dir], y + dy[dir]
+    new_sphere[nx][ny] += 1
 
 for _ in range(t):
+    new_sphere = [[0 for _ in range(n)] for _ in range(n)]
     for i in range(n):
         for j in range(n):
             if sphere[i][j] == 1:
-                move(i, j)
+                move(i, j, new_sphere)
     
     for i in range(n):
         for j in range(n):
-            if sphere[i][j] > 1:
-                sphere[i][j] = 0
+            if new_sphere[i][j] > 1:
+                new_sphere[i][j] = 0
+
+    sphere = new_sphere
 
 sphere_num = 0
 for i in range(n):
