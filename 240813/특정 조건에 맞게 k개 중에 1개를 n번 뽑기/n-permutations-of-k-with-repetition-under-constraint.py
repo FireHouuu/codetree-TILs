@@ -6,6 +6,7 @@ def choose(curr_num):
     if curr_num == n + 1:
         for j in range(curr_num - 1):
             print(ans[j], end = ' ')
+        print()
         return
     
     for i in range(1, k+1):
