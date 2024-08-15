@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static boolean checkGo(int x, int y) {
-        if (!inRange(x, y) || grid[x][y] == 0) return false;
+        if (!inRange(x, y) || grid[x][y] == 0 || visited[x][y]) return false;
         return true;
     }
 
@@ -27,7 +27,7 @@ public class Main {
             if (checkGo(nx, ny)) {
                 if(nx == n && ny == m) {
                     ans = 1;
-                    break;
+                    return;
                 }
                 visited[nx][ny] = true;
                 DFS(nx, ny);
