@@ -15,22 +15,22 @@ public class Main {
                 break;
             }
 
-            if (count[curr-1] == 0 && curr-1 != n) {
+            if (curr < MAX_NUM && count[curr-1] == 0 && curr-1 != n) {
                 q.add(curr-1);
                 count[curr-1] = count[curr] + 1;
             }
 
-            if (count[curr+1] == 0 && curr+1 != n) {
+            if (curr + 1 < MAX_NUM && count[curr+1] == 0 && curr+1 != n) {
                 q.add(curr+1);
                 count[curr+1] = count[curr] + 1;
             }
 
-            if (curr % 2 == 0 && count[curr / 2] == 0 && curr / 2 != n) {
+            if (curr < MAX_NUM && curr % 2 == 0 && count[curr / 2] == 0 && curr / 2 != n) {
                 q.add(curr / 2);
                 count[curr / 2] = count[curr] + 1;
             }
 
-            if (curr % 3 == 0 && count[curr / 3] == 0 && curr / 3 != n) {
+            if (curr < MAX_NUM && curr % 3 == 0 && count[curr / 3] == 0 && curr / 3 != n) {
                 q.add(curr / 3);
                 count[curr / 3] = count[curr] + 1;
             }
