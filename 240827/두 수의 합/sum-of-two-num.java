@@ -14,7 +14,7 @@ public class Main {
         int nums = n;
         for (int i = 0; i < n; i++) {
             int key = sc.nextInt();
-            if (key == m / 2) {
+            if (m % 2 == 0 && key == m / 2) {
                 count_solo++;
             }
             else {
