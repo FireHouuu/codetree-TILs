@@ -14,9 +14,8 @@ public class Main {
         int nums = n;
         for (int i = 0; i < n; i++) {
             int key = sc.nextInt();
-            if (hash.containsKey(key)) {
-                if (m - key == key) count_solo++;
-                hash.remove(key);
+            if (key == m / 2) {
+                count_solo++;
             }
             else {
                 hash.put(key, m - key);
@@ -31,6 +30,7 @@ public class Main {
                 }
             }
         }
+        count_solo = (count_solo * (count_solo - 1)) / 2;
         System.out.println(count / 2 + count_solo);
     }
 }
