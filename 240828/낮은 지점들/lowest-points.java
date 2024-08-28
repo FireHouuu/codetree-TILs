@@ -6,11 +6,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
-        HashMap<long, long> map = new HashMap<>();
+        HashMap<Long, Long> map = new HashMap<>();
         long ans = 0;
         
         for (int i = 0; i < n; i++) {
-            int long = sc.nextInt(); int logn = sc.nextInt();
+            long x = sc.nextInt(); long y = sc.nextInt();
             if (!map.containsKey(x)) {
                 map.put(x, y);
             }
