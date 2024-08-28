@@ -10,6 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt(); g = sc.nextInt();
         HashSet<Integer>[] set = new HashSet[g];
+        HashSet<Integer> checking = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();
 
         for (int i = 0; i < g; i++) {
@@ -21,6 +22,7 @@ public class Main {
         queue.add(1);
         int ans = 1;
         while(!queue.isEmpty()) {
+            //System.out.println(queue);
             int check = queue.poll();
             for (int i = 0; i < g; i++) {
                 if (set[i].contains(check)) {
@@ -28,9 +30,12 @@ public class Main {
                     if (set[i].size() == 1) {
                         Iterator<Integer> iterator = set[i].iterator();
                         int element = iterator.next();
-                        queue.add(element);
+                        if (!checking.contains(element)) {
+                            checking.add(element);
+                            queue.add(element);
+                            ans++;
+                        }
                         set[i].remove(element);
-                        ans++;
                     }
                 } 
             }
