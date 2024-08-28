@@ -16,7 +16,7 @@ public class Main {
             int num = sc.nextInt();
             set[i] = new HashSet<Integer>();
             for (int j = 0; j < num; j++) 
-                set[i].add(j);
+                set[i].add(sc.nextInt());
         }
         queue.add(1);
         int ans = 1;
@@ -27,10 +27,7 @@ public class Main {
                     set[i].remove(check);
                     if (set[i].size() == 1) {
                         Iterator<Integer> iterator = set[i].iterator();
-                        int element = 0;
-                        if (iterator.hasNext()) {
-                            element = iterator.next();
-                        }
+                        int element = iterator.next();
                         queue.add(element);
                         set[i].remove(element);
                         ans++;
