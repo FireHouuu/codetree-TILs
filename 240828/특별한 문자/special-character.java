@@ -6,13 +6,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String ch = sc.next();
         char[] arr = ch.toCharArray();
+        HashMap<Character, Integer> count = new HashMap<>();
         HashMap<Character, Integer> order = new HashMap<>();
         int orderNum = 1;
         int cal = 100000;
         char ans = 'a';
 
         for (char c : arr) {
-            if (!order.containsKey(c)) {
+            if (!count.containsKey(c)) {
+                count.put(c, 1);
                 order.put(c, orderNum);
                 orderNum++;
             }
