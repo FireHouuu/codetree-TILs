@@ -8,7 +8,7 @@ public class Main {
         char[] arr = ch.toCharArray();
         HashMap<Character, Integer> order = new HashMap<>();
         int orderNum = 1;
-        int cal = 0;
+        int cal = 100000;
         char ans = 'a';
 
         for (char c : arr) {
@@ -26,8 +26,9 @@ public class Main {
         }
         else {
             for (char c : order.keySet()) {
-                if (cal < order.get(c)) {
+                if (cal > order.get(c)) {
                     ans = c;
+                    cal = order.get(c);
                 }
             }
             System.out.println(ans);
