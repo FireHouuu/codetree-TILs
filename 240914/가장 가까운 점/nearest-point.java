@@ -11,7 +11,11 @@ class Pair implements Comparable<Pair> {
 
     @Override
     public int compareTo(Pair p) {
-        return Math.abs(this.x) + Math.abs(this.y) - Math.abs(p.x) - Math.abs(p.y);
+        int output = Math.abs(this.x) + Math.abs(this.y) - Math.abs(p.x) - Math.abs(p.y);
+        if (output == 0) {
+            return Math.abs(p.y) - Math.abs(this.y);
+        }
+        return output;
     }
 }
 public class Main {
