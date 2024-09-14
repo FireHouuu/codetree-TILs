@@ -14,9 +14,13 @@ public class Main {
         while (q.size() > 1) {
             int x = -q.poll();
             int y = -q.poll();
-            q.add(-Math.abs(x - y));
+            int input = Math.abs(x - y);
+            if (input != 0)
+                q.add(-Math.abs(x - y));
         }
-
-        System.out.println(-q.poll());
+        if (q.isEmpty())
+            System.out.println(-1);
+        else 
+            System.out.println(-q.poll());
     }
 }
