@@ -16,8 +16,8 @@ public class Main {
     public static int count = 0;
 
     public static void DFS (chat ch, int depth, chat[] chats) {
-        if (ch.auth < 0) return;
-        if (ch.auth >= depth)
+        if (ch.auth < 0 && depth != 0) return;
+        if (ch.auth >= depth && depth != 0)
             count++;
 
         if (ch.left != -1) {
@@ -75,31 +75,32 @@ public class Main {
                 int c2_lr = chats[c2].lr;
 
                 // 부모와 lr 값을 스왑
-                chats[c1].parents = c2_par;
-                chats[c1].lr = c2_lr;
-                chats[c2].parents = c1_par;
-                chats[c2].lr = c1_lr;
+                if (c1_par != c2_par) {
+                    chats[c1].parents = c2_par;
+                    chats[c1].lr = c2_lr;
+                    chats[c2].parents = c1_par;
+                    chats[c2].lr = c1_lr;
 
-                // 부모 노드의 자식 포인터를 업데이트
-                if (c1_par != -1) {
-                    if (chats[c1_par].left == c1) {
-                        chats[c1_par].left = c2;
-                    } else if (chats[c1_par].right == c1) {
-                        chats[c1_par].right = c2;
+                    // 부모 노드의 자식 포인터를 업데이트
+                    if (c1_par != -1) {
+                        if (chats[c1_par].left == c1) {
+                            chats[c1_par].left = c2;
+                        } else if (chats[c1_par].right == c1) {
+                            chats[c1_par].right = c2;
+                        }
                     }
-                }
-                if (c2_par != -1) {
-                    if (chats[c2_par].left == c2) {
-                        chats[c2_par].left = c1;
-                    } else if (chats[c2_par].right == c2) {
-                        chats[c2_par].right = c1;
+                    if (c2_par != -1) {
+                        if (chats[c2_par].left == c2) {
+                            chats[c2_par].left = c1;
+                        } else if (chats[c2_par].right == c2) {
+                            chats[c2_par].right = c1;
+                        }
                     }
                 }
             } else if (order == 500) {
                 count = 0;
                 int target = sc.nextInt();
                 DFS(chats[target], 0, chats);
-                count += -1;
                 System.out.println(count);
             }
         }
